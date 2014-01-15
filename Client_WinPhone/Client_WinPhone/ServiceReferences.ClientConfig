@@ -1,0 +1,24 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_Account" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_Feed" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:61005/Services/Account.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Account"
+                contract="ServAcc.Account" name="BasicHttpBinding_Account" />
+            <endpoint address="http://localhost:61005/Services/Feed.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Feed"
+                contract="ServFeed.Feed" name="BasicHttpBinding_Feed" />
+        </client>
+    </system.serviceModel>
+</configuration>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ServerRss.Services" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServerRss.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:61005/Services/Feed.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:complexType name="ArrayOfChannelData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChannelData" nillable="true" type="tns:ChannelData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChannelData" nillable="true" type="tns:ArrayOfChannelData" />
+  <xs:complexType name="ChannelData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastBuildDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Link" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PubDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChannelData" nillable="true" type="tns:ChannelData" />
+  <xs:complexType name="ArrayOfItemData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemData" nillable="true" type="tns:ItemData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemData" nillable="true" type="tns:ArrayOfItemData" />
+  <xs:complexType name="ItemData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Link" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="PubDate" nillable="true" type="q1:DateTimeOffset" />
+      <xs:element minOccurs="0" name="Read" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemData" nillable="true" type="tns:ItemData" />
+</xs:schema>

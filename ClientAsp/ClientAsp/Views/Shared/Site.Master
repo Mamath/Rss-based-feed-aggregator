@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <!--<link href="../../Content/Site.css" rel="stylesheet" type="text/css" />-->
+    <link href="../../Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="../../Scripts/bootstrap.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container well" style="padding:80px;">
+        <div id="header" class="row">
+            <div class="well">
+                <% Html.RenderPartial("LogOnUserControl"); %>
+            </div> 
+        </div>
+
+        <div class="row well">
+
+                <% if (Request.IsAuthenticated)
+                   { %>
+            <div class="row well-lg">
+                        <div class="col-md-4"><%: Html.ActionLink("Feeds", "ListFeed", "Feed")%></div>
+                        <div class="col-md-4"><%: Html.ActionLink("Add A feed", "AddFeed", "Feed")%></div>
+                        <div class="col-md-4"><%: Html.ActionLink("All user feed", "AllFeed", "Feed")%></div>
+            </div>
+                <% } %>
+            <div class="row">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div id="footer">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

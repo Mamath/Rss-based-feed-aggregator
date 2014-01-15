@@ -1,0 +1,6 @@
+C:\Users\Deteceh\Documents\Visual Studio 2010\Projects\ClientAsp\ClientAsp\bin\ClientAsp.dll
+C:\Users\Deteceh\Documents\Visual Studio 2010\Projects\ClientAsp\ClientAsp\bin\ClientAsp.XmlSerializers.dll
+C:\Users\Deteceh\Documents\Visual Studio 2010\Projects\ClientAsp\ClientAsp\bin\ClientAsp.pdb
+C:\Users\Deteceh\Documents\Visual Studio 2010\Projects\ClientAsp\ClientAsp\obj\Release\ClientAsp.dll
+C:\Users\Deteceh\Documents\Visual Studio 2010\Projects\ClientAsp\ClientAsp\obj\Release\ClientAsp.pdb
+C:\Users\Deteceh\Documents\Visual Studio 2010\Projects\ClientAsp\ClientAsp\obj\Release\ClientAsp.XmlSerializers.dll

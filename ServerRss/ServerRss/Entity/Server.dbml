@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="rssdb" Class="ServerDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\rssdb.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="rssdbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[User]" Member="User">
+    <Type Name="User">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="superuser" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="User_Session" Member="Session" ThisKey="id" OtherKey="id_user" Type="Session" />
+      <Association Name="User_ItemRead" Member="ItemRead" ThisKey="id" OtherKey="id_user" Type="ItemRead" />
+      <Association Name="User_ChannelXUser" Member="ChannelXUser" ThisKey="id" OtherKey="id_user" Type="ChannelXUser" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Session" Member="Session">
+    <Type Name="Session">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="session_key" Type="System.String" DbType="VarChar(38) NOT NULL" CanBeNull="false" />
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="expire" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="User_Session" Member="User" ThisKey="id_user" OtherKey="id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ItemRead" Member="ItemRead">
+    <Type Name="ItemRead">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_item" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_ItemRead" Member="User" ThisKey="id_user" OtherKey="id" Type="User" IsForeignKey="true" />
+      <Association Name="Item_ItemRead" Member="Item" ThisKey="id_item" OtherKey="id" Type="Item" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Item" Member="Item">
+    <Type Name="Item">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_channel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="link" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="pubDate" Type="System.DateTimeOffset" DbType="DateTimeOffset" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="guid" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="author" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="category" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="comments" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Item_ItemRead" Member="ItemRead" ThisKey="id" OtherKey="id_item" Type="ItemRead" />
+      <Association Name="Channel_Item" Member="Channel" ThisKey="id_channel" OtherKey="id" Type="Channel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChannelXUser" Member="ChannelXUser">
+    <Type Name="ChannelXUser">
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_channel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="User_ChannelXUser" Member="User" ThisKey="id_user" OtherKey="id" Type="User" IsForeignKey="true" />
+      <Association Name="Channel_ChannelXUser" Member="Channel" ThisKey="id_channel" OtherKey="id" Type="Channel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Channel" Member="Channel">
+    <Type Name="Channel">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="link" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="url" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="image" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="enclosure" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Channel_Item" Member="Item" ThisKey="id" OtherKey="id_channel" Type="Item" />
+      <Association Name="Channel_ChannelXUser" Member="ChannelXUser" ThisKey="id" OtherKey="id_channel" Type="ChannelXUser" />
+    </Type>
+  </Table>
+</Database>

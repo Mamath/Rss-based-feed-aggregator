@@ -1,0 +1,5 @@
+c:\users\deteceh\documents\visual studio 2010\Projects\ClientAsp\ClientAsp\bin\ClientAsp.dll
+c:\users\deteceh\documents\visual studio 2010\Projects\ClientAsp\ClientAsp\bin\ClientAsp.pdb
+c:\users\deteceh\documents\visual studio 2010\Projects\ClientAsp\ClientAsp\obj\Debug\ClientAsp.csprojResolveAssemblyReference.cache
+c:\users\deteceh\documents\visual studio 2010\Projects\ClientAsp\ClientAsp\obj\Debug\ClientAsp.dll
+c:\users\deteceh\documents\visual studio 2010\Projects\ClientAsp\ClientAsp\obj\Debug\ClientAsp.pdb

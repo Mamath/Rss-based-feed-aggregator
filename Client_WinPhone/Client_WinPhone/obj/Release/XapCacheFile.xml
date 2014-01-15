@@ -1,0 +1,16 @@
+﻿<xapCache source="D:\Rss\Client_WinPhone\Client_WinPhone\Bin\Release\Client_WinPhone.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="15/01/2014 23:03:36">
+  <file source="D:\Rss\Client_WinPhone\Client_WinPhone\Bin\Release\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="15/01/2014 22:24:03" />
+  <file source="D:\Rss\Client_WinPhone\Client_WinPhone\Background.png" archivePath="Background.png" lastWriteTime="15/01/2014 04:08:18" />
+  <file source="D:\Rss\Client_WinPhone\Client_WinPhone\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="15/01/2014 04:08:18" />
+  <file source="D:\Rss\Client_WinPhone\Client_WinPhone\obj\Release\Client_WinPhone.dll" archivePath="Client_WinPhone.dll" lastWriteTime="15/01/2014 23:03:35" />
+  <file source="D:\Rss\Client_WinPhone\packages\MvvmLightLibs.4.2.30.0\lib\sl4-wp71\GalaSoft.MvvmLight.Extras.WP71.dll" archivePath="GalaSoft.MvvmLight.Extras.WP71.dll" lastWriteTime="15/01/2014 04:42:49" />
+  <file source="D:\Rss\Client_WinPhone\packages\MvvmLightLibs.4.2.30.0\lib\sl4-wp71\GalaSoft.MvvmLight.WP71.dll" archivePath="GalaSoft.MvvmLight.WP71.dll" lastWriteTime="15/01/2014 04:42:49" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.0\Libraries\Silverlight\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="29/08/2011 23:48:26" />
+  <file source="D:\Rss\Client_WinPhone\packages\MvvmLightLibs.4.2.30.0\lib\sl4-wp71\Microsoft.Practices.ServiceLocation.dll" archivePath="Microsoft.Practices.ServiceLocation.dll" lastWriteTime="15/01/2014 04:42:49" />
+  <file source="D:\Rss\Client_WinPhone\packages\MvvmLightLibs.4.2.30.0\lib\sl4-wp71\System.Windows.Interactivity.dll" archivePath="System.Windows.Interactivity.dll" lastWriteTime="15/01/2014 04:42:49" />
+  <file source="D:\Rss\Client_WinPhone\Client_WinPhone\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="15/01/2014 04:12:03" />
+  <file source="D:\Rss\Client_WinPhone\Client_WinPhone\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="15/01/2014 04:08:18" />
+  <file source="D:\Rss\Client_WinPhone\Client_WinPhone\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="15/01/2014 22:24:03" />
+  <file source="D:\Rss\Client_WinPhone\Client_WinPhone\Bin\Release\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="15/01/2014 04:08:18" />
+  <file source="D:\Rss\Client_WinPhone\Client_WinPhone\Bin\Release\Background.png" archivePath="Background.png" lastWriteTime="15/01/2014 04:08:18" />
+</xapCache>

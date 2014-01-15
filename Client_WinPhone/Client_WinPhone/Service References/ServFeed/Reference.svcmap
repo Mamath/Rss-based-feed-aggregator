@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="65840f04-4547-4115-b95c-c7512bb47447" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:61005/Services/Feed.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Feed.disco" MetadataType="Disco" ID="33509a50-cb51-48e9-a065-3a69b48e93d7" SourceId="1" SourceUrl="http://localhost:61005/Services/Feed.svc?disco" />
+    <MetadataFile FileName="Feed.wsdl" MetadataType="Wsdl" ID="5a672d6f-0401-48ea-9d1a-946c312dce96" SourceId="1" SourceUrl="http://localhost:61005/Services/Feed.svc?wsdl" />
+    <MetadataFile FileName="Feed.xsd" MetadataType="Schema" ID="fac7b01f-f6dd-4032-be9b-67ec2806570d" SourceId="1" SourceUrl="http://localhost:61005/Services/Feed.svc?xsd=xsd4" />
+    <MetadataFile FileName="Feed1.xsd" MetadataType="Schema" ID="961edc25-a748-4bbf-afe5-2288a0197939" SourceId="1" SourceUrl="http://localhost:61005/Services/Feed.svc?xsd=xsd0" />
+    <MetadataFile FileName="Feed2.xsd" MetadataType="Schema" ID="903baca4-a58a-4600-8e6e-347460bfec42" SourceId="1" SourceUrl="http://localhost:61005/Services/Feed.svc?xsd=xsd1" />
+    <MetadataFile FileName="Feed3.xsd" MetadataType="Schema" ID="0a844e05-d4bd-4bb6-a942-7eda38146ef9" SourceId="1" SourceUrl="http://localhost:61005/Services/Feed.svc?xsd=xsd2" />
+    <MetadataFile FileName="Feed4.xsd" MetadataType="Schema" ID="e36f1935-eca2-4289-b141-c7abae0bce12" SourceId="1" SourceUrl="http://localhost:61005/Services/Feed.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

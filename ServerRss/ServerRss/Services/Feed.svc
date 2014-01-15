@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ServerRss.Services.Feed" CodeBehind="Feed.svc.cs" %>

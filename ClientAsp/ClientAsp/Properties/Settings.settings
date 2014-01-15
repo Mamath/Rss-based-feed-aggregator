@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ClientAsp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ClientAsp_ServAcc_Account" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:61005/Services/Account.svc</Value>
+    </Setting>
+    <Setting Name="ClientAsp_ServFeed_Feed" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:61005/Services/Feed.svc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

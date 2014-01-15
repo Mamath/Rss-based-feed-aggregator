@@ -1,0 +1,76 @@
+﻿<Window x:Class="ClientWPF.Channel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Client_WPF_Utils="clr-namespace:ClientWPF.Utils"
+        xmlns:Client_WPF_ViewModel="clr-namespace:ClientWPF.ViewModel"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:Client_WPF_Behavior="clr-namespace:ClientWPF.Behaviors"
+        mc:Ignorable="d"
+        Title="{Binding WindowTitle, Mode=OneWay}" Height="640" Width="480">
+
+    <Window.Resources>
+        <Client_WPF_Utils:DateConverter x:Key="DateConverter" />
+        <Client_WPF_Utils:StringToHtmlConverter x:Key="StringToHtmlConverter" />
+        <Client_WPF_ViewModel:FeedDetailsViewModel x:Key="FeedDetailsViewModelDataSource" d:IsSourceData="True" />
+        <Thickness x:Key="Thickness">0,10,0,0</Thickness>
+        <Thickness x:Key="MargLR">10,0</Thickness>
+        <SolidColorBrush x:Key="BackgroundTransparent" Color="Black" Opacity="0.3"/>
+    </Window.Resources>
+    <Window.DataContext>
+        <Binding Mode="OneWay" Source="{StaticResource FeedDetailsViewModelDataSource}"/>
+    </Window.DataContext>
+    <ScrollViewer >
+        <Grid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0,10,0,0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <ItemsControl Grid.Row="1" ItemsSource="{Binding Items}" ItemTemplate="{DynamicResource DataTemplate}" Focusable="False" VerticalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Disabled" ClipToBounds="True">
+                <ItemsControl.Resources>
+                    <DataTemplate x:Key="DataTemplate">
+                        <StackPanel x:Name="stackPanel" Margin="0,0,0,10" ClipToBounds="True">
+                            <Grid ClipToBounds="True" Height="Auto" Width="Auto" Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock TextAlignment="Center" LineHeight="18.667" FontSize="18.667" FontWeight="Bold" HorizontalAlignment="Left" d:LayoutOverrides="Height" Text="{Binding Title}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
+                                <StackPanel Grid.Column="0" Orientation="Horizontal" Grid.Row="1">
+                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="(" VerticalAlignment="Center"/>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding PubDate, Converter={StaticResource DateConverter}}" Width="Auto" VerticalAlignment="Center"/>
+                                    <TextBlock HorizontalAlignment="Stretch" TextWrapping="Wrap" Text=")" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Orientation="Horizontal" d:LayoutOverrides="Height" HorizontalAlignment="Right">
+                                    <Button Content="Voir" HorizontalAlignment="Right" Margin="0,0,2,0"  d:LayoutOverrides="Height" BorderBrush="{x:Null}">
+                                        <i:Interaction.Behaviors>
+                                            <Client_WPF_Behavior:ToggleVisibilityBehavior Target="{Binding ElementName=webBrowser, Mode=OneWay}"/>
+                                        </i:Interaction.Behaviors>
+                                    </Button>
+                                    <Button Content="Vu"  BorderBrush="{x:Null}" HorizontalAlignment="Right" Margin="0" d:LayoutOverrides="Height">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="Click">
+                                                <i:InvokeCommandAction CommandParameter="{Binding Mode=OneWay}" Command="{Binding DataContext.ReadItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}"/>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                            <WebBrowser x:Name="webBrowser" Height="Auto" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled" ClipToBounds="True" Visibility="Collapsed" Margin="10,0,10,10">
+                                <i:Interaction.Behaviors>
+                                    <Client_WPF_Behavior:WebBrowserUtilityBehavior HtmlContent="{Binding Description, Converter={StaticResource StringToHtmlConverter}}"/>
+                                </i:Interaction.Behaviors>
+                            </WebBrowser>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.Resources>
+            </ItemsControl>
+        </Grid>
+    </ScrollViewer>
+</Window>

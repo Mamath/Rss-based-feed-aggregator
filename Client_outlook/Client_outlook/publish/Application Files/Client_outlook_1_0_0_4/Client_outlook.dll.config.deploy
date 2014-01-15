@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_Feed" />
+                <binding name="BasicHttpBinding_Account" />
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:61005/Services/Feed.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Feed"
+                contract="ServFeed.Feed" name="BasicHttpBinding_Feed" />
+            <endpoint address="http://localhost:61005/Services/Account.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_Account"
+                contract="ServAcc.Account" name="BasicHttpBinding_Account" />
+        </client>
+    </system.serviceModel>
+</configuration>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ServerRss.Tools" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServerRss.Tools" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:61005/Services/Feed.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ServerRss.Services" />
+  <xs:complexType name="Resultat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_error" type="tns:Resultat.ErrorCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Resultat" nillable="true" type="tns:Resultat" />
+  <xs:simpleType name="Resultat.ErrorCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESS" />
+      <xs:enumeration value="USER_NOT_FOUND" />
+      <xs:enumeration value="USER_ALREADY_EXIST" />
+      <xs:enumeration value="INFORMATION_REQUIRED" />
+      <xs:enumeration value="NOT_LOGUED" />
+      <xs:enumeration value="INTERNAL_ERROR" />
+      <xs:enumeration value="NEED_PRIVILEGE" />
+      <xs:enumeration value="ALREADY_LOGUED" />
+      <xs:enumeration value="CANNOT_CREATE_FEED" />
+      <xs:enumeration value="CANNOT_GET_FEED" />
+      <xs:enumeration value="ITEM_NOT_FOUND" />
+      <xs:enumeration value="PARAMETER_ERROR" />
+      <xs:enumeration value="INVALID_PARAMETER" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Resultat.ErrorCode" nillable="true" type="tns:Resultat.ErrorCode" />
+  <xs:complexType name="ResultatOfArrayOfChannelDataxs063O9k">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultatOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ServerRss.Tools" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfChannelData" Namespace="http://schemas.datacontract.org/2004/07/ServerRss.Services" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Resultat">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ServerRss.Services" minOccurs="0" name="_val" nillable="true" type="q1:ArrayOfChannelData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultatOfArrayOfChannelDataxs063O9k" nillable="true" type="tns:ResultatOfArrayOfChannelDataxs063O9k" />
+  <xs:complexType name="ResultatOfArrayOfItemDataxs063O9k">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultatOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ServerRss.Tools" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfItemData" Namespace="http://schemas.datacontract.org/2004/07/ServerRss.Services" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Resultat">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ServerRss.Services" minOccurs="0" name="_val" nillable="true" type="q2:ArrayOfItemData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResultatOfArrayOfItemDataxs063O9k" nillable="true" type="tns:ResultatOfArrayOfItemDataxs063O9k" />
+</xs:schema>
